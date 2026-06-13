@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "ECE Student",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": -50,
+      "left": 150,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu6050",
+      "top": -50,
+      "left": 250,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht22:VCC", "esp:3V3", "red", [] ],
+    [ "dht22:GND", "esp:GND.1", "black", [] ],
+    [ "dht22:SDA", "esp:D4", "green", [] ],
+    [ "mpu6050:VCC", "esp:3V3", "red", [] ],
+    [ "mpu6050:GND", "esp:GND.2", "black", [] ],
+    [ "mpu6050:SDA", "esp:D21", "blue", [] ],
+    [ "mpu6050:SCL", "esp:D22", "yellow", [] ]
+  ],
+  "dependencies": {}
+}
